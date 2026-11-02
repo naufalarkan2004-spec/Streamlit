@@ -122,7 +122,7 @@ def get_prediction_from_api(df):
     payload = json.loads(df.to_json(orient='records'))
     response = requests.post('https://ml-deployment34-k5vmyltip-nn-a791.vercel.app/get_predict', json=payload)
     prediction = response.json()
-    return np.asarray(prediction['prob'])
+    return np.asarray(prediction['proba'])
 
 # -----------------------------------------------------------------------------
 # Skor dummy (hanya untuk MODE DEMO). Boleh dihapus setelah model asli dipasang.
